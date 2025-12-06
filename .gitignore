@@ -3,3 +3,4 @@ output.csv
 simulator
 obj/*
 obj/
+src/include/wren.*

@@ -1,4 +1,4 @@
-local GHRLen = 14
+local GHRLen = 16
 local PHTLen = (1 << GHRLen)
 local GHRXorMask = PHTLen - 1
 

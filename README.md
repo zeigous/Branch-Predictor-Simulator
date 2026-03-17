@@ -12,8 +12,6 @@ ZMark is a branch predictor simulator that models predictor accuracies on arbitr
 - **Use custom Lua predictors** via `-p predictor.lua`
   A Lua file must be provided for the simulator to work
 
-- **Lightweight and extensible** — the core simulator is concise (~325 lines) while supporting arbitrary Lua predictors
-
 ## Usage
 
 After compilation, run the simulator as follows:
@@ -26,11 +24,11 @@ After compilation, run the simulator as follows:
 
 The Lua File **Must** define the following functions:
 - `reset()`
-    Initializes the predictor, returns `0` for success
+    Initializes the predictor, return `0`
 - `predict(PC)`
     Returns `0` if the branch is not taken, `1` if taken
 - `update(PC, branchResult, prediction)`
-    Updates predictor state. Return `0` for success
+    Updates predictor state. Return `0`
 
 **All 3 Functions** Are required!
 
@@ -43,7 +41,5 @@ To compile the simulator, navigate to the root directory and run:
 ```make```
 
 ## Notes
-
 - The simulator outputs accuracy statistics every 1k branches to the CSV file specified with the `-o` argument
-- Traces and Lua predictors can be swapped easily without recompiling
-- Designed for easy experimentation with different branch predictors
+- I still need to update the README with information on how to generate the trace files, until then, there are 3 trace files in the `traces/` folder
